@@ -1,10 +1,7 @@
 
 
 fun main() {
-    var i = 10
-    var j = i - 1
-    while(j >= 1) {
-        print("$j ")
-        j--
-    }
+    var arr = intArrayOf(1, 2, 3, 4, 5)
+
+    println("Array size is: ${arr.size}")
 }
