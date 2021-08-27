@@ -24,7 +24,7 @@ class LLN(private var data: String,private var next: LLN? = null) {
 
     fun split(arr: Array<LLN?>, wh: Int) { // not including length, may not need in Kotlin
         // Not sure if Array<LLN> is correct or not
-        println(data)
+        //println(data)
         val temp: LLN?
         if(wh < arr.size && arr[wh] == null) { // my way of testing
             arr[wh] = this
@@ -38,7 +38,7 @@ class LLN(private var data: String,private var next: LLN? = null) {
             temp = next
             setNext(arr[newWh])
             arr[newWh] = this
-            temp?.split(arr, wh + 1)
+            temp?.split(arr, newWh + 1)
         }
 
         /*

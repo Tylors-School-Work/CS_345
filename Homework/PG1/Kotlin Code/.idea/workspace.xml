@@ -12,9 +12,9 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/LL.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/LL.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/LLN.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/LLN.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/testing.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/testing.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PG1_cpp_code/.vs/PG1_cpp_code/v16/Browse.VC.db" beforeDir="false" afterPath="$PROJECT_DIR$/../PG1_cpp_code/.vs/PG1_cpp_code/v16/Browse.VC.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,19 +99,5 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="kotlin-function">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/LL.kt</url>
-          <line>25</line>
-          <properties class="LL" method="shellSort">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

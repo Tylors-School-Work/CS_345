@@ -33,13 +33,8 @@ class LL(private var head: LLN?) {
             while(tdiff % 2 == 0) tdiff /= 2
             while(tdiff % 3 == 0) tdiff /= 3
             if(tdiff > 1) { diff--; continue }
+            // try adding ArrayList<LLN> = ArrayList(diff) tomorrow
             var arr: Array<LLN?> = arrayOfNulls(diff) // this is an array of 'null' of size diff, and will hold Nodes
-            /* I don't think I actually need to initialize the array from above, in c++ you do tho
-            var i = 0
-            while(i < diff) {
-                arr[i] = null
-            }
-            */
             head?.split(arr, 0) // not including length, may not need in Kotlin
             for(i in 0 until diff) arr[i] = arr[i]?.mildSort()
             head = rejoin(arr, (c - 1 + diff) % diff, null) // not including length, may not need in Kotlin
