@@ -17,6 +17,20 @@ class LL(private var head: LLN?) {
         return head?.ct()!!
     }
 
+    // DEBUGGING METHOD
+    fun printList(arr: Array<LLN?>) {
+        for(i in arr.indices) {
+            if(arr[i]?.getNext() != null) {
+                var t = arr[i]
+                while(t != null) {
+                    print("${t.getData()} -> ")
+                    t = t.getNext()
+                }
+            }
+            else println(arr[i]?.getData())
+        }
+    }
+
     fun add(d: String) { head = LLN(d, head) }
 
     // this function has some crude ways of getting around for() loops in the c++ code
@@ -28,19 +42,15 @@ class LL(private var head: LLN?) {
         if(c < 2) return
         var diff = c - 1
         while(diff >= 1) {
-            //println("Diff is: $diff")
             var tdiff = diff
             while(tdiff % 2 == 0) tdiff /= 2
             while(tdiff % 3 == 0) tdiff /= 3
             if(tdiff > 1) { diff--; continue }
-            // try adding ArrayList<LLN> = ArrayList(diff) tomorrow
             var arr: Array<LLN?> = arrayOfNulls(diff) // this is an array of 'null' of size diff, and will hold Nodes
-            head?.split(arr, 0) // not including length, may not need in Kotlin
+            head?.split(arr, 0)
             for(i in 0 until diff) arr[i] = arr[i]?.mildSort()
-            head = rejoin(arr, (c - 1 + diff) % diff, null) // not including length, may not need in Kotlin
-
-            //head?.print()
-            diff-- // this may need to be placed in more than one spot depending on when the loop restarts
+            head = rejoin(arr, (c - 1 + diff) % diff, null)
+            diff--
         }
     }
 }

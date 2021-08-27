@@ -1,7 +1,9 @@
 
 
 fun main() {
-    var arr = intArrayOf(1, 2, 3, 4, 5)
+    var arr: Array<Int?> = arrayOfNulls(5)
+    arr[0] = 2
 
-    println("Array size is: ${arr.size}")
+
+    for(i in arr.indices) println(arr[i])
 }

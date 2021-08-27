@@ -5,7 +5,7 @@
 */
 
 fun main() {
-    var list = LL(null) // may want to change the constructor, may not need one
+    var list = LL(null)
     while(true) {
         print("Enter a value: ")
         var input = readLine()
@@ -16,15 +16,14 @@ fun main() {
     list.print()
 }
 
-fun rejoin(arr: Array<LLN?>, wh: Int, l: LLN?): LLN? { // not including length, may not need in Kotlin
-    //println(wh)
+fun rejoin(arr: Array<LLN?>, wh: Int, l: LLN?): LLN? {
     var newWh = wh
     if(wh < 0) newWh = arr.size - 1
     if(arr[newWh] == null) return l
     var temp: LLN?; var newL = l // this is so I can change the value of 'l'
     if(arr[newWh]!!.getNext() != null) {
         temp = arr[newWh]?.getNext()
-        arr[newWh]!!.setNext(l)
+        arr[newWh]!!.setNext(newL)
         newL = arr[newWh]
         arr[newWh] = temp
     }
@@ -33,7 +32,7 @@ fun rejoin(arr: Array<LLN?>, wh: Int, l: LLN?): LLN? { // not including length, 
         newL = arr[newWh]
         arr[newWh] = null
     }
-    newL = rejoin(arr, newWh - 1, l)
+    newL = rejoin(arr, newWh - 1, newL)
     return newL
 
     /*
