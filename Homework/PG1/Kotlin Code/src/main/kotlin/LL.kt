@@ -1,8 +1,13 @@
 /*
 
+Tylor J. Hanshaw
+This is the Linked List file that holds the LL class along with all of its member functions
 
+All code has been translated from C++ to Kotlin
 
 */
+
+// Come back and remove 'private' from the constructors
 
 class LL(private var head: LLN?) {
 
@@ -12,7 +17,7 @@ class LL(private var head: LLN?) {
         println("*****")
     }
 
-    fun ct(): Int {
+    private fun ct(): Int {
         if(head == null) return 0
         return head?.ct()!!
     }
@@ -38,7 +43,7 @@ class LL(private var head: LLN?) {
     // and find better ways to handle everything
     // look for the while() loops that use variables and decrement them
     fun shellSort() {
-        var c = ct()
+        val c = ct()
         if(c < 2) return
         var diff = c - 1
         while(diff >= 1) {
@@ -46,7 +51,7 @@ class LL(private var head: LLN?) {
             while(tdiff % 2 == 0) tdiff /= 2
             while(tdiff % 3 == 0) tdiff /= 3
             if(tdiff > 1) { diff--; continue }
-            var arr: Array<LLN?> = arrayOfNulls(diff) // this is an array of 'null' of size diff, and will hold Nodes
+            val arr: Array<LLN?> = arrayOfNulls(diff) // this is an array of 'null' of size diff, and will hold Nodes
             head?.split(arr, 0)
             for(i in 0 until diff) arr[i] = arr[i]?.mildSort()
             head = rejoin(arr, (c - 1 + diff) % diff, null)

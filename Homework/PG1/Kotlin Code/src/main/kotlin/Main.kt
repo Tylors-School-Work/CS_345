@@ -1,14 +1,19 @@
 /*
 
+Tylor J. Hanshaw
+This is the Main file that holds the main() function that adds to and prints the Linked List
+An important function in this file is the rejoin(), which rejoins the array of linked lists after being split and
+mildly sorted
 
+All code has been translated from C++ to Kotlin
 
 */
 
 fun main() {
-    var list = LL(null)
+    val list = LL(null)
     while(true) {
         print("Enter a value: ")
-        var input = readLine()
+        val input = readLine()
         if(input == "") break
         list.add(input!!)
     }
@@ -17,10 +22,10 @@ fun main() {
 }
 
 fun rejoin(arr: Array<LLN?>, wh: Int, l: LLN?): LLN? {
-    var newWh = wh
+    var newWh = wh // this is so I can change the value of 'wh'
     if(wh < 0) newWh = arr.size - 1
     if(arr[newWh] == null) return l
-    var temp: LLN?; var newL = l // this is so I can change the value of 'l'
+    val temp: LLN?; var newL = l // this is so I can change the value of 'l'
     if(arr[newWh]!!.getNext() != null) {
         temp = arr[newWh]?.getNext()
         arr[newWh]!!.setNext(newL)

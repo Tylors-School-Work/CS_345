@@ -1,8 +1,17 @@
 /*
 
+Tylor J. Hanshaw
+This is the Linked List Node file that holds the LLN class along with all of its member functions
+Some LLN functions of note are split() and mildsort()
 
+All code has been translated from C++ to Kotlin
 
 */
+
+// Come back and remove 'private' from the constructors
+
+// Also remove the getter and setter functions to, I'll have to rework my code a bit in
+//  split() and mildsort(), but it shouldn't be a huge issue
 
 class LLN(private var data: String,private var next: LLN? = null) {
 
