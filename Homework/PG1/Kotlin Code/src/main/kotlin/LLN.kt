@@ -8,18 +8,7 @@ All code has been translated from C++ to Kotlin
 
 */
 
-// Come back and remove 'private' from the constructors
-
-// Also remove the getter and setter functions to, I'll have to rework my code a bit in
-//  split() and mildsort(), but it shouldn't be a huge issue
-
-class LLN(private var data: String,private var next: LLN? = null) {
-
-    fun getData(): String { return data }
-
-    fun getNext(): LLN? { return next }
-
-    fun setNext(n: LLN?) { next = n }
+class LLN(var data: String, var next: LLN? = null) {
 
     fun print() {
         println(data)
@@ -35,15 +24,15 @@ class LLN(private var data: String,private var next: LLN? = null) {
         val temp: LLN?
         if(wh < arr.size && arr[wh] == null) {
             arr[wh] = this
-            temp = getNext()
-            setNext(null)
+            temp = next
+            next = null
             temp?.split(arr, wh + 1)
         }
         else {
             var newWh = wh
             if(newWh == arr.size) newWh = 0
             temp = next
-            setNext(arr[newWh])
+            next = arr[newWh]
             arr[newWh] = this
             temp?.split(arr, newWh + 1)
         }
@@ -60,11 +49,11 @@ class LLN(private var data: String,private var next: LLN? = null) {
         val temp2: LLN?
         if(next == null) return this
         val temp1: LLN = next!!.mildSort()
-        this.setNext(temp1)
+        next = temp1
         return if(data < next!!.data) { // interesting if() here, return if() will return the last line in the body
-            temp2 = next!!.getNext()
-            temp1.setNext(this)
-            setNext(temp2)
+            temp2 = next!!.next
+            temp1.next = this
+            next = temp2
             temp1
         } else this
 

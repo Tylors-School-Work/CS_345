@@ -26,14 +26,14 @@ fun rejoin(arr: Array<LLN?>, wh: Int, l: LLN?): LLN? {
     if(wh < 0) newWh = arr.size - 1
     if(arr[newWh] == null) return l
     val temp: LLN?; var newL = l // this is so I can change the value of 'l'
-    if(arr[newWh]!!.getNext() != null) {
-        temp = arr[newWh]?.getNext()
-        arr[newWh]!!.setNext(newL)
+    if(arr[newWh]!!.next != null) {
+        temp = arr[newWh]?.next
+        arr[newWh]!!.next = newL
         newL = arr[newWh]
         arr[newWh] = temp
     }
     else {
-        arr[newWh]!!.setNext(newL)
+        arr[newWh]!!.next = newL
         newL = arr[newWh]
         arr[newWh] = null
     }

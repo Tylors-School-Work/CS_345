@@ -7,8 +7,6 @@ All code has been translated from C++ to Kotlin
 
 */
 
-// Come back and remove 'private' from the constructors
-
 class LL(private var head: LLN?) {
 
     fun print() {
@@ -25,14 +23,14 @@ class LL(private var head: LLN?) {
     // DEBUGGING METHOD
     fun printList(arr: Array<LLN?>) {
         for(i in arr.indices) {
-            if(arr[i]?.getNext() != null) {
+            if(arr[i]?.next != null) {
                 var t = arr[i]
                 while(t != null) {
-                    print("${t.getData()} -> ")
-                    t = t.getNext()
+                    print("${t.data} -> ")
+                    t = t.next
                 }
             }
-            else println(arr[i]?.getData())
+            else println(arr[i]?.data)
         }
     }
 
