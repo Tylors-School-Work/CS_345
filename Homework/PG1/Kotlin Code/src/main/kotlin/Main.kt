@@ -1,18 +1,9 @@
 /*
 
-<<<<<<< HEAD
     Tylor J. Hanshaw
 
     This is the Main.kt file where most of the programs execution is done, including the rejoin() method
     No header files are needed in Kotlin
-=======
-Tylor J. Hanshaw
-This is the Main file that holds the main() function that adds to and prints the Linked List
-An important function in this file is the rejoin(), which rejoins the array of linked lists after being split and
-mildly sorted
-
-All code has been translated from C++ to Kotlin
->>>>>>> 243b434992513a51dd396f2bd69516864714df01
 
 */
 
@@ -34,7 +25,7 @@ fun main() {
 // Also changed some variables from being of type var to val, seeing as one of the variables doesn't change through the method
 // Also you can omit the "length" parameter from this method call since you can call "Array<T>.size" instead in Kotlin
 fun rejoin(arr: Array<LLN?>, wh: Int, l: LLN?): LLN? {
-    var newWh = wh // this is so I can change the value of 'wh'
+    var newWh = wh
     if(wh < 0) newWh = arr.size - 1
     if(arr[newWh] == null) return l
     val temp: LLN?; var newL = l // this is so I can change the value of 'l'
