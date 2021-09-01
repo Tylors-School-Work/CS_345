@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="027d3398-7a3d-46ad-bbe6-917df42b09e0" name="Changes" comment="Edited the code a little more, and added some comments. In particular check my new comment in LL.kt, want to try using an ArrayList&lt;LLN&gt;.&#10;&#10;We're getting there.">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+=======
+>>>>>>> 243b434992513a51dd396f2bd69516864714df01
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/LL.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/LL.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/LLN.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/LLN.kt" afterDir="false" />
@@ -40,6 +43,11 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/kotlin/LL.kt" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/kotlin/Main.kt" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/kotlin/LLN.kt" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1xEknosgcj8tsnhfHjxuxG2qQWS" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />

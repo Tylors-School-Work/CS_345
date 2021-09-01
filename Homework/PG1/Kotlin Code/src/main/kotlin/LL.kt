@@ -1,9 +1,16 @@
 /*
 
+<<<<<<< HEAD
     Tylor J. Hanshaw
 
     This is the LL.kt file that holds the code for the LinkedList class
     This class file relies on the LLN.kt file to work properly
+=======
+Tylor J. Hanshaw
+This is the Linked List file that holds the LL class along with all of its member functions
+
+All code has been translated from C++ to Kotlin
+>>>>>>> 243b434992513a51dd396f2bd69516864714df01
 
 */
 
@@ -15,7 +22,7 @@ class LL(private var head: LLN?) {
         println("*****")
     }
 
-    fun ct(): Int {
+    private fun ct(): Int {
         if(head == null) return 0
         return head?.ct()!!
     }

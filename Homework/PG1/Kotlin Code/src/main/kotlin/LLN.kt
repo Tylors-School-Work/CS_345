@@ -1,5 +1,6 @@
 /*
 
+<<<<<<< HEAD
     Tylor J. Hanshaw
 
     This is the LLN.kt file that holds the code for the LinkedListNode class
@@ -10,6 +11,17 @@
 */
 
 class LLN(var data: String,var next: LLN? = null) {
+=======
+Tylor J. Hanshaw
+This is the Linked List Node file that holds the LLN class along with all of its member functions
+Some LLN functions of note are split() and mildsort()
+
+All code has been translated from C++ to Kotlin
+
+*/
+
+class LLN(var data: String, var next: LLN? = null) {
+>>>>>>> 243b434992513a51dd396f2bd69516864714df01
 
     fun print() {
         println(data)
@@ -58,7 +70,11 @@ class LLN(var data: String,var next: LLN? = null) {
         if(next == null) return this
         val temp1: LLN = next!!.mildSort()
         next = temp1
+<<<<<<< HEAD
         return if(data < next!!.data) { // <--------
+=======
+        return if(data < next!!.data) { // interesting if() here, return if() will return the last line in the body
+>>>>>>> 243b434992513a51dd396f2bd69516864714df01
             temp2 = next!!.next
             temp1.next = this
             next = temp2
