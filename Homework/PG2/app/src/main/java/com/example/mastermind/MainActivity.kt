@@ -2,12 +2,14 @@ package com.example.mastermind
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
 import android.widget.Toast
 import androidx.core.view.isVisible
 import com.example.mastermind.databinding.ActivityMainBinding
 import android.util.Log // This is for debugging
+import android.widget.EditText
 
-var _TAG_ = "Logging: "
+val _TAG_ = "Logging: " // For logging/debugging
 
 /*
 
@@ -24,12 +26,12 @@ class MainActivity : AppCompatActivity() {
     // From what I've read this is now the standard practice compared to findViewById()
     private lateinit var binding: ActivityMainBinding
     private var answer = 0 // 0 meaning the game hasn't started yet
-    private var guesses = 0
+    private var guesses = 0 // How many tries the user took to solve the problem
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // Inflating my XML to Kotlin code using ViewBinding
+        // Inflating my XML to Kotlin code using ViewBinding, this makes all of my XML in activity_main usable in Kotlin
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -52,7 +54,7 @@ class MainActivity : AppCompatActivity() {
 
     // Most of the work is done here
     private fun submitAnswer() {
-        ++guesses
+        guesses++
 
         // If a game hasn't been started
         if(answer == 0) {
@@ -79,12 +81,43 @@ class MainActivity : AppCompatActivity() {
             binding.hintTxt2.isVisible = true
             binding.userGuessTxt.isVisible = true
             answer = 0
+            guesses = 0
             return
         }
 
         val counter = checkInput(input, ans)
         decideOutput(counter, input)
 
+    }
+
+    // THIS NEEDS WORK --> This works, but only if the answer doesn't have repeat numbers...
+    // Basically doing all the counting needed
+    // Then returning the counter object that holds both variables need
+    private fun checkInput(input: String, ans: String): Counts {
+        val counter = Counts(0, 0)
+        if(input == "") return counter
+
+        var temp1 = input
+        var temp2: Char
+
+        // Finding the chars in the correct position
+        for(i in ans.indices) {
+            if(temp1[i] == ans[i]) {
+                counter.correctCount++
+                temp2 = ans[i]
+                temp1 = temp1.replace("""[$temp2]""".toRegex(), ".")
+            }
+            else {
+                for(elements in ans) {
+                    if(temp1[i] == elements) {
+                        counter.outOfOrderCount++
+                        temp2 = elements
+                        temp1 = temp1.replace("""[$temp2]""".toRegex(), ".")
+                    }
+                }
+            }
+        }
+        return counter
     }
 
     private fun decideOutput(counter: Counts, input: String) {
@@ -116,22 +149,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    // Basically doing all the counting needed
-    // Then returning the counter object that holds both variables need
-    private fun checkInput(input: String, ans: String): Counts {
-        var counter = Counts(0, 0)
-        for(i in input.indices) {
-            if(input[i] == ans[i]) ++counter.correctCount
-            else {
-                for(elements in ans) if(input[i] == elements) ++counter.outOfOrderCount
-            }
-        }
-        return counter
-    }
-
     private fun endGame() {
         if(answer == 0) {
-            Toast.makeText(this, "Your game hasn't started yet", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "You have not started a game yet.", Toast.LENGTH_SHORT).show()
             return
         }
         if(guesses == 0) {
@@ -158,6 +178,20 @@ class MainActivity : AppCompatActivity() {
         binding.hintTxt2.isVisible = false
         binding.guessEt.text.clear()
         answer = (1000..9999).random()
+        guesses = 0
         Toast.makeText(this, "You have started the game, answer is $answer", Toast.LENGTH_LONG).show()
+    }
+
+    // Checks to see if there are duplicates in the answer
+    private fun findDuplicates(str: String): Boolean {
+        var counter = -1
+        for(i in str.indices) {
+            for(j in str.indices) {
+                if(str[i] == str[j]) counter++
+            }
+            if(counter > 0) return true
+            counter = -1
+        }
+        return false
     }
 }

@@ -1,4 +1,4 @@
-
+import kotlin.coroutines.coroutineContext
 
 fun countByTwo(items: Array<Int>) {
     for(i in items.indices) if(items[i] % 2 == 0) println(items[i])
@@ -49,10 +49,22 @@ fun wut(input: Int, str: String) {
 }
 
 fun main() {
-    GlobalScope lauch
+    val str1 = "1234"
+    if(findDuplicates(str1)) println("There are duplicates!")
+    else println("There are no duplicates..")
 
-    task1()
+}
 
+fun findDuplicates(str: String): Boolean {
+    var counter = -1
+    for(i in str.indices) {
+        for(j in str.indices) {
+            if(str[i] == str[j]) counter++
+        }
+        if(counter > 0) return true
+        counter = -1
+    }
+    return false
 }
 
 // Coroutine practice
