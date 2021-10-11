@@ -11,6 +11,7 @@ import android.widget.Button
 import android.widget.RelativeLayout
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.isVisible
@@ -46,13 +47,6 @@ class MainActivity : AppCompatActivity() {
         actionGenre = findViewById(R.id.action_tv)
         submitBtn = findViewById(R.id.submit_genre_btn)
 
-        submitBtn.setOnClickListener {
-            if(genreSelected != "") {
-                val intent = FilmSelectionActivity.newIntent(this@MainActivity, genreSelected)
-                startActivity(intent)
-            }
-        }
-
         val resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
             if(result.resultCode == Activity.RESULT_OK) {
                 Toast.makeText(this, "This has been hit!", Toast.LENGTH_SHORT).show()
@@ -63,6 +57,13 @@ class MainActivity : AppCompatActivity() {
                 }
             }
             else Toast.makeText(this, "Something bad happened.", Toast.LENGTH_SHORT).show()
+        }
+
+        submitBtn.setOnClickListener {
+            if(genreSelected != "") {
+                val intent = FilmSelectionActivity.newIntent(this@MainActivity, genreSelected)
+                resultLauncher.launch(intent)
+            }
         }
 
         thrillerGenre.setOnClickListener { genreSelected = "thriller" }
