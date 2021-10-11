@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">FavoriteMovie</string>
+    <string name="action">Action</string>
+    <string name="comedy">Comedy</string>
+    <string name="fantasy">Fantasy</string>
+    <string name="horror">Horror</string>
+    <string name="textview">TextView</string>
+    <string name="thriller">Thriller</string>
+    <string name="pick_the_genre">Pick the Genre</string>
+    <string name="filler_movie">Filler Movie</string>
+</resources>

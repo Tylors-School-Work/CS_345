@@ -2,7 +2,7 @@
 
     Tylor J. Hanshaw
 
-    This is the Main.kt file where most of the programs execution is done, including the rejoin() method
+    This is the Main.kt file where most of the programs' execution is done, including the rejoin() method
     No header files are needed in Kotlin
 
 */

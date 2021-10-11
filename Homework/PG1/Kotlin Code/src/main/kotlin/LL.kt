@@ -7,11 +7,11 @@
 
 */
 
-class LL(private var head: LLN?) {
+class LL(var head: LLN?) {
 
     fun print() {
         println("*****")
-        if(head != null) head?.print()
+        head?.print()
         println("*****")
     }
 

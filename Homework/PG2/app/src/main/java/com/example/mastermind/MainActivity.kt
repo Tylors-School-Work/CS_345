@@ -100,12 +100,15 @@ class MainActivity : AppCompatActivity() {
         var temp1 = input
         var temp2: Char
 
-        // Finding the chars in the correct position
+        // Try to maybe make a copy each time I remove a number
+        // But only from the substring before the number I'm replacing and after
+        // That way I can also check for duplicates, maybe??
         for(i in ans.indices) {
-            if(temp1[i] == ans[i]) {
+            if(input[i] == ans[i]) {
                 counter.correctCount++
                 temp2 = ans[i]
                 temp1 = temp1.replace("""[$temp2]""".toRegex(), ".")
+                Log.v(_TAG_, "Temp1: $temp1") // DEBUGGING
             }
             else {
                 for(elements in ans) {
@@ -113,6 +116,7 @@ class MainActivity : AppCompatActivity() {
                         counter.outOfOrderCount++
                         temp2 = elements
                         temp1 = temp1.replace("""[$temp2]""".toRegex(), ".")
+                        Log.v(_TAG_, "Temp1: $temp1") // DEBUGGING
                     }
                 }
             }
