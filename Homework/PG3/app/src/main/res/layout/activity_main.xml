@@ -8,10 +8,22 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/movie_picked_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="Filler text"
+        android:textSize="20sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:id="@+id/main_activity_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="160dp"
         android:text="@string/pick_the_genre"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
