@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/tylor/OneDrive/Desktop/CS_345/Homework/PG4/app/src/main/res/drawable/star_rating_icon_big.xml" value="0.3828125" />
+        <entry key="..\:/Users/tylor/OneDrive/Desktop/CS_345/Homework/PG4/app/src/main/res/drawable/star_rating_icon_half.xml" value="0.29074074074074074" />
         <entry key="..\:/Users/tylor/OneDrive/Desktop/CS_345/Homework/PG4/app/src/main/res/layout/activity_main_movie.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/tylor/OneDrive/Desktop/CS_345/Homework/PG4/app/src/main/res/layout/activity_movie_selected.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/tylor/OneDrive/Desktop/CS_345/Homework/PG4/app/src/main/res/layout/fragment_movie.xml" value="0.36666666666666664" />

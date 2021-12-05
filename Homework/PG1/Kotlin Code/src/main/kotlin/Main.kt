@@ -8,17 +8,17 @@
 */
 
 // One thing of note here, in Kotlin there is no "new" keyword - you can simply create an instance of a class without "new"
-fun main() {
-    val list = LL(null)
-    while(true) {
-        print("Enter a value: ")
-        val input = readLine()
-        if(input == "") break
-        list.add(input!!)
+    fun main(args: Array<String>) {
+        val list = LL(null)
+        while(true) {
+            print("Enter a value: ")
+            val input = readLine()
+            if(input == "") break
+            list.add(input!!)
+        }
+        list.shellSort()
+        list.print()
     }
-    list.shellSort()
-    list.print()
-}
 
 // Translated rejoin() method from the C++ code
 // Most of this is similar to split() from the C++ code, but I did add more temporary variables to compensate for function parameters being of type val

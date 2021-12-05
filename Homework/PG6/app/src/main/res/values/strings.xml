@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">PG6</string>
+    <string name="enter_a_web_address">Enter a web address:</string>
+    <string name="web_addr_hint">http://example.com</string>
+</resources>

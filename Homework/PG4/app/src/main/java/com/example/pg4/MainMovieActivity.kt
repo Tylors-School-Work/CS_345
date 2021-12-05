@@ -1,23 +1,32 @@
+/*
+*       Tylor J. Hanshaw
+*
+*   - My main activity, the activity that is ran on start up, hosts the FragmentMovieList
+*   - Also initiates the transition from this activity to MovieSelectedActivity
+* */
+
 package com.example.pg4
 
-import android.content.Context
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import com.example.pg4.data.Movie
-import com.example.pg4.fragments.FragmentMovie
 import com.example.pg4.fragments.FragmentMovieList
 import java.util.*
 
 /**
  *
- *   - So far this code does allow me to pick a movie, see more data about it and change the star-rating
- *   - But it's definitely not finished, I'm very close but the way I'm handling changing the star rating of each movie is problematic
- *   - Going to turn it in "as is", but will be turning it back in tomorrow 10/21/2021 fixed up
+ *   -- Should be all set now, fully commented everything and removed redundant/unnecessary code
+ *   -- I also added something new in this submission:
+ *      -- There are now two buttons in my "FragmentMovie" fragment
+ *          -- One to change the selected movies star rating
+ *          -- And another to return to my "FragmentMovieList" fragment
+ *      -- Now when the user enters a new valid star rating the displayed star rating in the fragment will be updated
+ *          -- If the user enters an invalid rating, they will be told so
+ *      -- The star rating image will also be updated depending on what the user chooses to rate the movie as
  *
 * */
 
+// Used for debugging/logging
 private const val LOG = "MainMovieActivity"
 
 class MainMovieActivity : AppCompatActivity(), FragmentMovieList.Callbacks {
@@ -39,17 +48,6 @@ class MainMovieActivity : AppCompatActivity(), FragmentMovieList.Callbacks {
     override fun onMovieSelected(movieId: UUID?) {
         val intent = MovieSelectedActivity.newIntent(this, movieId)
         startActivity(intent)
-    }
-
-    // Ended up not using this, but when I touch it up tonight (10/19/2021) I may do something with it
-    companion object {
-        val EXTRA_MOVIE_ID = "com.example.pg4.movie_id"
-
-        fun newIntent(context: Context, mId: UUID?): Intent {
-            val intent = Intent(context, MovieSelectedActivity::class.java).apply {
-                putExtra(MovieSelectedActivity.MOVIE_ID, mId)
-            }
-            return intent
-        }
+        Log.d(LOG, "Called from FragmentMovieList")
     }
 }

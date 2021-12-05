@@ -34,7 +34,9 @@ class LL(var head: LLN?) {
         }
     }
 
-    fun add(d: String) { head = LLN(d, head) }
+    fun add(data: String) {
+        head = LLN(data, head)
+    }
 
     // this function has some crude ways of getting around for() loops in the c++ code
     // I want to come back to this section and see if I can touch it up
