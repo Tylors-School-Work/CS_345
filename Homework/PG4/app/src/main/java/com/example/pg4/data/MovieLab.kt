@@ -9,6 +9,7 @@ package com.example.pg4.data
 
 import java.util.*
 
+// This acts as a ViewModel, storing data while View's do their magic and display the data
 object MovieLab {
 
     private val allMovies: MutableList<Movie>?

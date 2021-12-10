@@ -14,15 +14,10 @@ import com.example.pg4.fragments.FragmentMovieList
 import java.util.*
 
 /**
+ *                          Brief Description of the App
  *
- *   -- Should be all set now, fully commented everything and removed redundant/unnecessary code
- *   -- I also added something new in this submission:
- *      -- There are now two buttons in my "FragmentMovie" fragment
- *          -- One to change the selected movies star rating
- *          -- And another to return to my "FragmentMovieList" fragment
- *      -- Now when the user enters a new valid star rating the displayed star rating in the fragment will be updated
- *          -- If the user enters an invalid rating, they will be told so
- *      -- The star rating image will also be updated depending on what the user chooses to rate the movie as
+ *   -- This program uses two activities that each host one fragment respectively
+ *   -- You are able to rate a given movie on a rating from 0-5 "star" rating
  *
 * */
 

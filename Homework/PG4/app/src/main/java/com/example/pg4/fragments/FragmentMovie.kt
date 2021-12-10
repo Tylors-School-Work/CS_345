@@ -22,6 +22,8 @@ private const val ARG_MOVIE_ID = "movie_selected"
 // Used for debugging/logging
 private const val LOG = "FragmentMovie"
 
+// Fragment that's hosted by MovieSelectedActivity
+// Dedicated to displaying the details of the currently selected movie
 class FragmentMovie : Fragment() {
 
     // Setting up all widgets in my fragment

@@ -12,6 +12,7 @@ import com.example.pg4.fragments.FragmentMovie
 import com.example.pg4.fragments.FragmentMovieList
 import java.util.*
 
+// This activity's sole purpose is to host my FragmentMovie fragment
 class MovieSelectedActivity : AppCompatActivity(), FragmentMovieList.Callbacks {
 
     override fun onCreate(savedInstanceState: Bundle?) {

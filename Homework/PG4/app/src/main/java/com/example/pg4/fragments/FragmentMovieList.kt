@@ -24,6 +24,7 @@ import java.util.*
 // Used for debugging/logging
 private const val LOG = "FragmentMovieList"
 
+// Fragment that displays all the movies added by the user in a RecyclerView
 class FragmentMovieList : Fragment() {
 
     // My "Callbacks" interface, used to navigate between my fragments and activities
